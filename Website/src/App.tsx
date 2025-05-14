@@ -65,9 +65,9 @@ function App() {
   const currentRoom = rooms.find((room) => room.id === selectedRoom);
 
   return (
-    <div className="min-h-screen w-full bg-[url('https://www.transparenttextures.com/patterns/beige-paper.png')] bg-repeat flex">
-      {/* Sidebar */}
-      <aside className="w-56 min-h-screen bg-white/80 flex flex-col items-center py-8 shadow-xl rounded-r-3xl mr-8">
+    <div className="min-h-screen w-full bg-[url('https://www.transparenttextures.com/patterns/beige-paper.png')] bg-repeat flex overflow-x-hidden">
+      {/* Sidebar - hidden on mobile */}
+      <aside className="hidden sm:flex w-56 min-h-screen bg-white/80 flex-col items-center py-8 shadow-xl rounded-r-3xl mr-8">
         <img src="/Logo.png" alt="Logo" className="w-32 mb-12" />
         <nav className="flex flex-col gap-6 w-full px-4">
           <button className="flex items-center gap-3 py-3 px-4 rounded-xl bg-black/90 text-white font-semibold shadow-md hover:bg-black">
@@ -85,28 +85,28 @@ function App() {
         </nav>
       </aside>
       {/* Main Content */}
-      <div className="flex-1 max-w-7xl mx-auto py-10">
-        <div className="flex space-x-8 mb-8">
+      <div className="flex-1 max-w-7xl p-4 sm:p-8 lg:p-12">
+        <div className="flex flex-col lg:flex-row gap-2 sm:gap-8 lg:gap-12 mb-4 sm:mb-8">
           {/* Image Section */}
           <div className="flex-1">
             <div className="bg-white/90 rounded-3xl shadow-lg p-0 overflow-hidden flex flex-col">
-              <div className="px-6 pt-6">
-                <span className="inline-block bg-white/90 rounded-xl px-4 py-2 text-lg font-semibold shadow mb-4">
+              <div className="px-2 pt-2 sm:px-6 sm:pt-6">
+                <span className="inline-block bg-white/90 rounded-xl px-2 py-1 sm:px-4 sm:py-2 text-base sm:text-lg font-semibold shadow mb-2 sm:mb-4">
                   {currentRoom?.name}
                 </span>
               </div>
               <img
                 src={currentRoom?.image}
                 alt={currentRoom?.name}
-                className="w-full h-[340px] object-cover rounded-3xl"
+                className="w-full h-32 sm:h-[340px] object-cover rounded-3xl"
               />
             </div>
           </div>
           {/* Right Panel - Room List */}
-          <div className="w-80">
-            <div className="bg-white/90 rounded-3xl shadow-lg p-6">
-              <h3 className="text-lg font-semibold mb-6">Rooms</h3>
-              <div className="space-y-2">
+          <div className="w-full lg:w-80">
+            <div className="bg-white/90 rounded-3xl shadow-lg p-2 sm:p-6">
+              <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-6">Rooms</h3>
+              <div className="space-y-1 sm:space-y-2">
                 {rooms.map((room) => (
                   <button
                     key={room.id}
@@ -128,7 +128,6 @@ function App() {
             </div>
           </div>
         </div>
-
         {/* Device Controls */}
         <DeviceControls roomId={selectedRoom} />
       </div>

@@ -43,7 +43,7 @@ function LightSwitch({ isOn, onToggle, onReset, deviceId }: LightSwitchProps) {
       <CardContent className="p-8 flex justify-center items-center">
         <button
           onClick={handleToggle}
-          className="relative w-[180px] h-[60px] rounded-full bg-gray-200 border-2 border-gray-300 shadow-inner focus:outline-none"
+          className="relative w-[140px] sm:w-[180px] h-[50px] sm:h-[60px] rounded-full bg-gray-200 border-2 border-gray-300 shadow-inner focus:outline-none"
           aria-pressed={isOn}
           role="switch"
         >
@@ -107,7 +107,7 @@ function SocketSwitch({ isOn, onToggle, onReset, deviceId }: SocketSwitchProps) 
       <CardContent className="p-8 flex justify-center items-center">
         <button
           onClick={handleToggle}
-          className="relative w-[100px] h-[50px] bg-gray-100 border border-gray-300 rounded-sm focus:outline-none overflow-hidden"
+          className="relative w-[80px] sm:w-[100px] h-[40px] sm:h-[50px] bg-gray-100 border border-gray-300 rounded-sm focus:outline-none overflow-hidden"
           aria-pressed={isOn}
           role="switch"
         >
@@ -190,7 +190,7 @@ export function DeviceControls({ roomId }: DeviceControlsProps) {
   };
 
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-2 sm:px-4 overflow-x-hidden max-w-full">
       {currentRoomDevices.map((device) =>
         device.type === "light" ? (
           <LightSwitch
