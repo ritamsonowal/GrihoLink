@@ -1,0 +1,6 @@
+# Ignore secrets.h
+server/ESP8266/secrets.h
+
+# Ignore config.ts
+website/src/lib/config.ts
+
