@@ -1,8 +1,8 @@
 ## 🧑‍💻 Getting Started
 
 ### ✅ Step 1: Create a secrets.h file in /server/ESP8266/ (where the .ino files are located)
-#define SSID "Your Wi-Fi SSID" // Wi-Fi Credentials
-#define PASS "Your Wi-Fi Password" // Wi-Fi Credentials
+#define SSID "Your Wi-Fi SSID" 
+#define PASS "Your Wi-Fi Password" 
 
 #define MQTT_CLIENT_ID ""  // Use a unique client ID 
 #define MQTT_BROKER ""     // Use any public broker 
