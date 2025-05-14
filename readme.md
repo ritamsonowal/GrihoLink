@@ -1,18 +1,15 @@
 ## 🧑‍💻 Getting Started
 
 ### ✅ Step 1: Create a secrets.h file in /server/ESP8266/ (where the .ino files are located)
-// Wi-Fi Credentials
-#define SSID "Your Wi-Fi SSID"
-#define PASS "Your Wi-Fi Password"
+#define SSID "Your Wi-Fi SSID" // Wi-Fi Credentials
+#define PASS "Your Wi-Fi Password" // Wi-Fi Credentials
 
-// MQTT Configuration
-#define MQTT_CLIENT_ID ""  // Use a unique client ID
+#define MQTT_CLIENT_ID ""  // Use a unique client ID 
 #define MQTT_BROKER ""     // Use any public broker 
 #define MQTT_PORT          // Choose a port number from any public broker
 
-// MQTT Topics for Relay Control
-#define RELAY_TOPIC_1 "your/topic/relay1"
-#define RELAY_TOPIC_2 "your/topic/relay2"
+#define RELAY_TOPIC_1 "your/topic/relay1" // MQTT Topics for Relay Control
+#define RELAY_TOPIC_2 "your/topic/relay2" // MQTT Topics for Relay Control
 
 ### ✅ Step 2: Create a config.ts file in /website/src/lib/
 export const MQTT_CONFIG = {
