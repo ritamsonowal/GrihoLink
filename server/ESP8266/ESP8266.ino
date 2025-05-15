@@ -3,12 +3,12 @@
 #include "secrets.h"
 
 // External function declarations
-extern void wifi(); // Function to connect to WiFi
-extern void setupRelays(); // Setup relays
-extern void mqttCallback(char* topic, byte* payload, unsigned int length); // MQTT callback
-extern void handleMQTT(); // MQTT handling function defined in mqtt_communication.ino
+extern void wifi(); 
+extern void setupRelays(); 
+extern void mqttCallback(char* topic, byte* payload, unsigned int length); 
+extern void handleMQTT();
 
-// Global variables
+
 WiFiClient espClient;
 PubSubClient client(espClient);
 
@@ -19,13 +19,13 @@ void setup() {
   wifi(); 
   setupRelays();
 
-  // Setup MQTT client after Wi-Fi is connected
+
   client.setServer(MQTT_BROKER, MQTT_PORT);
   client.setCallback(mqttCallback);
-  setupMQTT(); // 👈 Important: Call MQTT connection setup
+  setupMQTT(); 
 }
 
 void loop() {
   delay(10);
-  handleMQTT(); // Use the centralized MQTT handling function
+  handleMQTT(); 
 }

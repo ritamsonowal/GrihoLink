@@ -46,7 +46,7 @@ void handleMQTT() {
   client.loop(); 
 }
 
-// MQTT callback function
+
 void mqttCallback(char* topic, byte* payload, unsigned int length) {
   String topicStr = String(topic);
   String payloadStr = "";
